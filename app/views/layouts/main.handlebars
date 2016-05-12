@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alow</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<main>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">Branding</a>
+            </div>
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    {{#if user}}
+                        <li class="active"><a href="/signout">Sign Out</a></li>
+                        <li><a href="/#!/articles">List Articles</a></li>
+                        <li><a href="/#!/articles/create">Create Article</a></li>
+                    {{else}}
+                        <li><a href="/signup">Sign Up</a></li>
+                        <li><a href="/signin">Sign In</a></li>
+                    {{/if}}
+                </ul>
+                <form action="" class="navbar-form pull-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="search">
+                    </div>
+                    <button class="btn btn-default">Og</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    {{#each messages}}
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {{this}}
+        </div>
+    {{/each}}
+    {{{body}}}
+    <section class="container">
+        <section ng-view></section>
+    </section>
+</main>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<!--<script src="./produtos/produtos.client.module.js"></script>-->
+<!--<script src="./produtos/controllers/produtos.client.controller.js"></script>-->
+<!--<script src="./produtos/services/produtos.client.service.js"></script>-->
+<!--<script src="./produtos/config/produtos.client.routes.js"></script>-->
+<!--<script src="./despesas_aduaneiras/despesas-aduaneiras.client.module.js"></script>-->
+<!--<script src="./despesas_aduaneiras/config/despesas-aduaneiras.client.routes.js"></script>-->
+<!--<script src="./despesas_aduaneiras/controllers/despesas-aduaneiras.client.controllers.js"></script>-->
+<!--<script src="./despesas_aduaneiras/services/despesas-aduaneiras.client.service.js"></script>-->
+<script src="./application.js"></script>
+</body>
+</html>
