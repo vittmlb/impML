@@ -2,5 +2,6 @@
  * Created by Vittorio on 10/05/2016.
  */
 module.exports = {
-    sessionSecret: 'mSecret'
+    sessionSecret: 'mSecret',
+    db: 'mongodb://localhost/impML'
 };

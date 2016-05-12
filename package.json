@@ -17,6 +17,7 @@
     "htmlparser2": "^3.9.0",
     "http": "0.0.0",
     "https": "^1.0.0",
+    "jquery": "^2.2.3",
     "method-override": "^2.3.5",
     "mongoose": "^4.4.9",
     "mongoose-currency": "^0.2.0",

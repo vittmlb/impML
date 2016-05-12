@@ -57,10 +57,8 @@ module.exports = function() {
 
     app.use(express.static('./public'));
 
-    require('../app/routes/ml.server.routes')(app);
-
-
-
+    require('../app/routes/produtos_ml.server.routes.js')(app);
+    
     return app;
 
 };
