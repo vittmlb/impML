@@ -22,7 +22,15 @@ angular.module('produtosml').controller('ProdutosController', ['$scope', '$route
             });
         };
 
-        $scope.testeUpdate = function() {
+        $scope.atualizarVenda = function(item) {
+            item.$update(function () {
+                $location.path('/produtos');
+            }, function(errorResponse) {
+                $scope.error = errorResponse;
+            });
+        };
+
+        $scope.atualizarTodasVendas = function() {
             $scope.produtos.forEach(function(prod) {
                 prod.$update(function () {
                     alert('Success');

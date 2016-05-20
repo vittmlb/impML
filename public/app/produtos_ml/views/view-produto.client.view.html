@@ -22,7 +22,7 @@
             <div class="col-xs-6">
                 <div class="panel panel-default">
                     <!-- Default panel contents -->
-                    <div class="panel-heading">Panel heading</div>
+                    <div class="panel-heading">Histórico de Vendas</div>
 
                     <!-- Table -->
                     <table class="table table-striped">
@@ -33,9 +33,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr data-ng-repeat="item in produto.teste">
-                                <td data-ng-bind="item.data | date: 'dd/MM/yyyy'"></td>
-                                <td data-ng-bind="item.sold"></td>
+                            <tr data-ng-repeat="item in produto.historico">
+                                <td data-ng-bind="item.data | date: 'dd/MM/yyyy - HH:MM'"></td>
+                                <td data-ng-bind="item.venda"></td>
                             </tr>
                         </tbody>
                     </table>

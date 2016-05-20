@@ -16,12 +16,14 @@ function isDuplicate(err) {
 
 exports.update = function(req, res) {
     var produto = req.produto;
-    produto.teste.push({sold: 25, data: Date.now()});
+    produto.historico.push({sold: req.produto.sold_quantity, data: Date.now()});
     produto.save(function (err) {
         if(err) {
             return res.status(400).send({
                 message: err
             });
+        } else {
+            res.json(produto);
         }
     });
 };
@@ -34,6 +36,7 @@ exports.create = function(req, res) {
         json: true
     }, function(err, response, body) {
         var produto = new Produtos(body);
+        produto.historico.push({data: Date.now(), venda: body.sold_quantity});
         produto.save(function (err) {
             if(err) {
                 return res.status(400).send({
@@ -71,8 +74,9 @@ exports.findById = function(req, res, next, id) {
     });
 };
 
-exports.updateSoldQuantity = function(req, res, next, id) {
-    var url = baseUrl + req.body.produtoId;
+exports.updateSoldQuantity = function(req, res, next) {
+    var url = baseUrl + req.produto.id;
+    var produto = req.produto;
     request({
         method: 'GET',
         url: url,
@@ -83,13 +87,14 @@ exports.updateSoldQuantity = function(req, res, next, id) {
                 message: err
             });
         } else {
-            Produtos.findById(id).exec(function (err, produto) {
+            produto.historico.push({data: Date.now(), venda: body.sold_quantity});
+            produto.save(function (err) {
                 if(err) {
                     return res.status(400).send({
                         message: err
                     });
                 } else {
-                    produto.update({$push: {"teste": {data: Date.now(), sold: body.sold_quantity}}});
+                    res.json(produto);
                 }
             });
         }

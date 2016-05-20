@@ -12,7 +12,7 @@ module.exports = function(app) {
 
     app.route('/api/produtos_ml/:produtoId')
         .get(ml.read)
-        .put(ml.update);
+        .put(ml.updateSoldQuantity, ml.list);
     
 
     app.param('produtoId', ml.findById);

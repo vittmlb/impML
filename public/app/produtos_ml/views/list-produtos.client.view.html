@@ -1,7 +1,12 @@
 <section data-ng-controller="ProdutosController" data-ng-init="find()">
     <h2>Lista de Produtos:</h2>
     <br>
-
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary pull-left" ng-click="atualizarTodasVendas()">Atualizar Tudo</button>
+        </div>
+    </div>
+    <br>
     <ul class="list-group">
         <li class="list-group-item" data-ng-repeat="item in produtos">
             <div class="container">
@@ -15,12 +20,11 @@
                             <div class="row"><p class="text-primary">Vendas: {{item.sold_quantity}}</p></div>
                         </div>
                         <div class="col-xs-3">
-                            <button class="btn btn-default" ng-click="testeUpdate()">Update</button>
+                            <button class="btn btn-default" ng-click="atualizarVenda(item)">Update</button>
                         </div>
                     </div>
                 </a>
             </div>
-
         </li>
     </ul>
 </section>

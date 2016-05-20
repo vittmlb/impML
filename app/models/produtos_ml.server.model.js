@@ -108,10 +108,10 @@ var ProdutoMLSchema = new Schema({
     date_updated: {
         type: Date
     },
-    teste: [
+    historico: [
         {
             data: Date,
-            sold: Number
+            venda: Number
         }
     ]
 });
