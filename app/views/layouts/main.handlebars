@@ -3,6 +3,8 @@
 <head>
     <title>Alow</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/flatify.css">-->
 </head>
 <body>
 <main>
@@ -42,18 +44,21 @@
         <section ng-view></section>
     </section>
 </main>
+<footer>
+    Alow
+</footer>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
-<script src="./vendedores_ml/vendedores_ml.client.module.js"></script>
-<script src="./vendedores_ml/config/vendedores_ml.client.routes.js"></script>
-<script src="./vendedores_ml/controllers/vendedores_ml.client.controller.js"></script>
-<script src="./vendedores_ml/services/vendedores_ml.client.service.js"></script>
-<script src="./produtos_ml/produtos_ml.client.module.js"></script>
-<script src="./produtos_ml/config/produtos_ml.client.routes.js"></script>
-<script src="./produtos_ml/controllers/produtos_ml.client.controller.js"></script>
-<script src="./produtos_ml/services/produtos_ml.client.service.js"></script>
+<script src="./app/vendedores_ml/vendedores_ml.client.module.js"></script>
+<script src="./app/vendedores_ml/config/vendedores_ml.client.routes.js"></script>
+<script src="./app/vendedores_ml/controllers/vendedores_ml.client.controller.js"></script>
+<script src="./app/vendedores_ml/services/vendedores_ml.client.service.js"></script>
+<script src="./app/produtos_ml/produtos_ml.client.module.js"></script>
+<script src="./app/produtos_ml/config/produtos_ml.client.routes.js"></script>
+<script src="./app/produtos_ml/controllers/produtos_ml.client.controller.js"></script>
+<script src="./app/produtos_ml/services/produtos_ml.client.service.js"></script>
 <!--<script src="./produtos/produtos.client.module.js"></script>-->
 <!--<script src="./produtos/controllers/produtos.client.controller.js"></script>-->
 <!--<script src="./produtos/services/produtos.client.service.js"></script>-->
@@ -62,6 +67,6 @@
 <!--<script src="./despesas_aduaneiras/config/despesas-aduaneiras.client.routes.js"></script>-->
 <!--<script src="./despesas_aduaneiras/controllers/despesas-aduaneiras.client.controllers.js"></script>-->
 <!--<script src="./despesas_aduaneiras/services/despesas-aduaneiras.client.service.js"></script>-->
-<script src="./application.js"></script>
+<script src="./app/application.js"></script>
 </body>
 </html>
