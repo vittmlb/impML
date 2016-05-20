@@ -39,16 +39,13 @@ var ProdutoMLSchema = new Schema({
     },
     price: {
         type: Currency,
-        default: 0,
-        get: function(value) {
-            return value / 100;
-        }
+        default: 0
     },
     base_price: {
         type: Currency,
         default: 0,
         get: function(value) {
-            return value / 100;
+            return value;
         }
     },
     currency_id: {
@@ -90,6 +87,16 @@ var ProdutoMLSchema = new Schema({
     secure_thumbnail: {
         type: String
     },
+    pictures: [
+        {
+            id: String,
+            url: String,
+            secure_url: String,
+            size: String,
+            max_size: String,
+            quality: String
+        }
+    ],
     tags: {
         type: String,
         default: '',
@@ -100,7 +107,13 @@ var ProdutoMLSchema = new Schema({
     },
     date_updated: {
         type: Date
-    }
+    },
+    teste: [
+        {
+            data: Date,
+            sold: Number
+        }
+    ]
 });
 
 ProdutoMLSchema.set('toJSON', {

@@ -6,7 +6,15 @@ var ml = require('../controllers/produtos_ml.server.controller.js');
 
 module.exports = function(app) {
 
-    app.route('/fetchml')
-        .get(ml.curlFetch);
+    app.route('/api/produtos_ml')
+        .get(ml.list)
+        .post(ml.create);
+
+    app.route('/api/produtos_ml/:produtoId')
+        .get(ml.read)
+        .put(ml.update);
     
+
+    app.param('produtoId', ml.findById);
+
 };

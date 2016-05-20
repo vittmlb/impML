@@ -1,0 +1,68 @@
+<section ng-controller="ProdutosController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1 data-ng-bind="produto.title"> <small>Subtext for header</small></h1>
+    </div>
+    <div class="">
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img ng-src="{{produto.pictures[0].url}}" alt="...">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-9">
+                    <div class="well">
+                        <p class="text-primary">Data de criação: {{produto.start_time | date: 'dd/MM/yyyy'}} </p>
+                        <p class="text-primary">Quantidade Vendida: {{produto.sold_quantity}}</p>
+                        <p class="text-primary">Quantidade Disponível: {{produto.available_quantity}}</p>
+                        <p class="text-primary">Preço: {{produto.price | currency: 'R$ '}}</p>
+                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Panel heading</div>
+
+                    <!-- Table -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Venda</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-repeat="item in produto.teste">
+                                <td data-ng-bind="item.data | date: 'dd/MM/yyyy'"></td>
+                                <td data-ng-bind="item.sold"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Panel heading</div>
+
+                    <!-- Table -->
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Venda</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr data-ng-repeat="item in produto.teste">
+                            <td data-ng-bind="item.data | date: 'dd/MM/yyyy'"></td>
+                            <td data-ng-bind="item.sold"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

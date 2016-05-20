@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 module.exports = function() {
     var db = mongoose.connect(config.db);
 
-    mongoose.connection.on('connect', function () {
+    mongoose.connection.on('connected', function () {
         console.log(`Mongoose conencted at ${config.db}`);
     });
 
@@ -27,6 +27,7 @@ module.exports = function() {
     });
 
     require('../app/models/produtos_ml.server.model');
+    require('../app/models/vendedores_ml.server.model');
     
     return db;
     

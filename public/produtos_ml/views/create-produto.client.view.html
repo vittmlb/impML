@@ -1,0 +1,17 @@
+<section ng-controller="ProdutosController">
+    <h1>Produto</h1>
+    <form data-ng-submit="create()" novalidate>
+        <div class="container">
+            <label for="produtoId">Id do Produto</label>
+            <div class="form-group">
+                <input type="text" id="produtoId" class="form-control" placeholder="Entre com a id do Produto" data-ng-model="produtoId" required>
+            </div>
+        </div>
+        <div>
+            <p data-ng-bind="error"></p>
+        </div>
+        <div class="container">
+            <input type="submit" class="btn btn-info" value="Cadastrar">
+        </div>
+    </form>
+</section>
