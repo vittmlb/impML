@@ -1,4 +1,4 @@
-<section data-ng-controller="ProdutosController" data-ng-init="find()">
+<section data-ng-controller="ListProdutosController" data-ng-init="find()">
     <h2>Lista de Produtos:</h2>
     <br>
     <div class="row">
@@ -8,7 +8,7 @@
     </div>
     <br>
     <ul class="list-group">
-        <li class="list-group-item" data-ng-repeat="item in produtos">
+        <li class="list-group-item" dir-paginate="item in produtos | itemsPerPage: 5">
             <div class="container">
                 <a href="#!/produtos/{{item._id}}">
                     <div class="row">
@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-xs-7">
                             <div class="row"><a href="{{item.permalink}}"><h4 data-ng-bind="item.title" class="text-primary"></h4></a></div>
-                            <div class="row"><p class="text-primary">Vendas: {{item.sold_quantity}}</p></div>
+                            <div class="row"><p class="text-primary">Vendas: {{item.historico[produtos.length-1].venda}}</p></div>
                         </div>
                         <div class="col-xs-3">
                             <button class="btn btn-default" ng-click="atualizarVenda(item)">Update</button>
@@ -27,4 +27,43 @@
             </div>
         </li>
     </ul>
+    <div class="col-xs-12">
+        <div class="row">
+            <dir-pagination-controls class="center-block
+                                     max-size="5"
+                                     direction-links="true"
+                                     boundary-links="true">
+            </dir-pagination-controls>
+        </div>
+    </div>
 </section>
+<!--<section data-ng-controller="ProdutosController" data-ng-init="find()">-->
+    <!--<h2>Lista de Produtos:</h2>-->
+    <!--<br>-->
+    <!--<div class="row">-->
+        <!--<div class="col-xs-12">-->
+            <!--<button class="btn btn-primary pull-left" ng-click="atualizarTodasVendas()">Atualizar Tudo</button>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<br>-->
+    <!--<ul class="list-group">-->
+        <!--<li class="list-group-item" data-ng-repeat="item in produtos">-->
+            <!--<div class="container">-->
+                <!--<a href="#!/produtos/{{item._id}}">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-xs-2">-->
+                            <!--<img ng-src="{{item.thumbnail}}" alt="thumbnail of {{item.title}}">-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-7">-->
+                            <!--<div class="row"><a href="{{item.permalink}}"><h4 data-ng-bind="item.title" class="text-primary"></h4></a></div>-->
+                            <!--<div class="row"><p class="text-primary">Vendas: {{item.historico[produtos.length-1].venda}}</p></div>-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-3">-->
+                            <!--<button class="btn btn-default" ng-click="atualizarVenda(item)">Update</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</li>-->
+    <!--</ul>-->
+<!--</section>-->

@@ -24,6 +24,8 @@
     "bootstrap": "~3.3.6",
     "angular": "~1.5.3",
     "angular-route": "~1.5.3",
-    "angular-resource": "~1.5.3"
+    "angular-resource": "~1.5.3",
+    "angular-bootstrap": "^1.3.3",
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.1"
   }
 }

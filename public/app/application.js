@@ -3,7 +3,7 @@
  */
 
 var mainAppModuleName = 'impML';
-var mainAppModule = angular.module(mainAppModuleName, ['ngResource', 'ngRoute', 'produtosml']);
+var mainAppModule = angular.module(mainAppModuleName, ['ngResource', 'ngRoute', 'produtosml', 'angularUtils.directives.dirPagination']);
 
 mainAppModule.config(['$locationProvider', function($locationProvider) {
     $locationProvider.hashPrefix('!');
