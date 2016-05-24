@@ -10,7 +10,7 @@ todo: Implementar menu de configurações > Quantidade de ítens por página
 
 aparência:
 todo: Centralizar paginação
-
+todo: Alterar nome da janela principal - ok !!!!!
 
 mongodb
 todo: Referência Vendedor.
