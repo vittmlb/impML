@@ -1,7 +1,7 @@
 {
-  "name": "new_imp_git",
+  "name": "impml",
   "version": "1.0.0",
-  "description": "New Imp Git",
+  "description": "Importação Produtos ML",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.0",
