@@ -1,0 +1,17 @@
+informação:
+todo: Média de vendas por dia
+
+features:
+todo: ordenamento por quantidade vendida
+todo: ordenamento por faturamento
+todo: ordenamento por média de vendas por dia
+todo: Melhorar páginas de cadastro de produto e vendedores
+todo: Implementar menu de configurações > Quantidade de ítens por página
+
+aparência:
+todo: Centralizar paginação
+
+
+mongodb
+todo: Referência Vendedor.
+todo: Página Vendedor.
