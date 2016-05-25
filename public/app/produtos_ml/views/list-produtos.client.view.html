@@ -2,13 +2,13 @@
     <h2>Lista de Produtos:</h2>
     <br>
     <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-4 col-sm-6">
             <button class="btn btn-primary pull-left" ng-click="atualizarTodasVendas()">Atualizar Tudo</button>
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-4 col-sm-3">
             <input type="text" class="form-control" data-ng-model="numItemsPerPage">
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-4 col-sm-3">
             <input type="text" class="form-control" placeholder="Busca" data-ng-model="query">
         </div>
     </div>
@@ -18,15 +18,15 @@
             <div class="container">
                 <a href="#!/produtos/{{item._id}}">
                     <div class="row">
-                        <div class="col-xs-2">
+                        <div class="col-xs-4 col-sm-2">
                             <img ng-src="{{item.thumbnail}}" alt="thumbnail of {{item.title}}">
                         </div>
-                        <div class="col-xs-7">
+                        <div class="col-xs-8 col-sm-7">
                             <div class="row"><a href="{{item.permalink}}"><h4 data-ng-bind="item.title" class="text-primary"></h4></a></div>
                             <div class="row"><p class="text-primary">Vendas: {{item.historico[item.historico.length-1].venda}}</p></div>
                             <div class="row"><p class="text-primary">Média: {{item.media.venda}}</p></div>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="hidden-xs col-sm-3">
                             <button class="btn btn-default" ng-click="atualizarVenda(item)">Update</button>
                         </div>
                     </div>
