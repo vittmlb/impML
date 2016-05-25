@@ -118,7 +118,16 @@ var ProdutoMLSchema = new Schema({
 
 ProdutoMLSchema.set('toJSON', {
     getters: true,
-    virtuals: true
+    virtual: true
 });
+
+ProdutoMLSchema.virtual('media.venda').get(function () {
+    var vendaTotal = this.historico[this.historico.length - 1].venda - this.historico[0].venda;
+    return vendaTotal / dayDiff(this.historico[0].data, this.historico[this.historico.length - 1].data);
+});
+
+function dayDiff(firstDate, secondDate) {
+    return Math.round((secondDate - firstDate) / (1000 * 60 * 60 * 24));
+}
 
 mongoose.model('ProdutoML', ProdutoMLSchema);

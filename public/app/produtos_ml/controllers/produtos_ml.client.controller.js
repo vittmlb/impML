@@ -78,20 +78,7 @@ angular.module('produtosml').controller('ListProdutosController', ['$scope', '$r
             });
         };
 
-        $scope.filteredProdutos = [];
-        $scope.currentPage = 1;
-        $scope.numPerPage = 10;
-        $scope.mexSize = 5;
-
-        // $scope.$watch('currentPage + numPerPage', updateFilteredItems);
-        //
-        // function updateFilteredItems() {
-        //     var begin = (($scope.currentPage - 1) * $scope.numPerPage);
-        //     var end = begin + $scope.numPerPage;
-        //
-        //     $scope.filteredProdutos = $scope.produtos.slice(begin, end);
-        //
-        // }
+        $scope.numItemsPerPage = 10;
 
 
     }
