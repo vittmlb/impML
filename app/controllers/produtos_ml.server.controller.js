@@ -6,14 +6,6 @@ var request = require('request');
 
 var baseUrl = 'https://api.mercadolibre.com/items/';
 
-
-function isDuplicate(err) {
-    if(11000 === err.code || 11001 === err.code) {
-        return true;
-    }
-    return false;
-}
-
 exports.update = function(req, res) {
     var produto = req.produto;
     produto.historico.push({sold: req.produto.sold_quantity, data: Date.now()});
@@ -29,7 +21,8 @@ exports.update = function(req, res) {
 };
 
 exports.create = function(req, res) {
-    var url = baseUrl + req.body.produtoId;
+    var produtoId = req.body.produtoId.replace('-', '');
+    var url = baseUrl + produtoId;
     request({
         method: 'GET',
         url: url,
