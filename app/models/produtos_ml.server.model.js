@@ -14,7 +14,8 @@ var ProdutoMLSchema = new Schema({
     },
     id: {
         type: String,
-        trim: true
+        trim: true,
+        unique: true
     },
     site_id: {
         type: String,

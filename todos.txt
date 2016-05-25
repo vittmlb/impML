@@ -7,9 +7,11 @@ todo: ordenamento por faturamento
 todo: ordenamento por média de vendas por dia
 todo: Melhorar páginas de cadastro de produto e vendedores
 todo: Implementar menu de configurações > Quantidade de ítens por página
+todo: Implementar sistema de mensagem de erros.
+todo: Implementar cadastro de produto usando todo o link do produto
 
 aparência:
-todo: Centralizar paginação
+todo: Centralizar paginação - ok !!!!!!!
 todo: Alterar nome da janela principal - ok !!!!!
 
 mongodb

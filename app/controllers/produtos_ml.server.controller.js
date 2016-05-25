@@ -33,7 +33,7 @@ exports.create = function(req, res) {
         produto.save(function (err) {
             if(err) {
                 return res.status(400).send({
-                    message: err
+                    message: err.message
                 });
             } else {
                 res.json(produto);

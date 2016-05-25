@@ -10,7 +10,7 @@ angular.module('produtosml').controller('ProdutosController', ['$scope', '$route
             produto.$save(function (response) {
                 $location.path('/produtos/' + response._id);
             }, function(errorResponse) {
-                $scope.error = errorResponse.data;
+                $scope.error = errorResponse.data.message;
             });
         };
         $scope.find = function() {
