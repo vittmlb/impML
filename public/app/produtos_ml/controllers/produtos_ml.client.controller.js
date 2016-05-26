@@ -10,8 +10,8 @@ angular.module('produtosml').controller('ListProdutosController', ['$scope', '$r
             produto.$save(function (response) {
                 $location.path('/produtos/' + response._id);
             }, function(errorResponse) {
-                ngToast.danger(errorResponse.data.message.errmsg);
-                $scope.error = errorResponse.data.message.errmsg;
+                ngToast.danger(errorResponse.data.message);
+                $scope.error = errorResponse.data.message;
             });
         };
         $scope.find = function() {
@@ -27,7 +27,8 @@ angular.module('produtosml').controller('ListProdutosController', ['$scope', '$r
             item.$update(function () {
                 $location.path('/produtos');
             }, function(errorResponse) {
-                $scope.error = errorResponse;
+                ngToast.danger(errorResponse.data.message);
+                $scope.error = errorResponse.data.message;
             });
         };
         $scope.atualizarTodasVendas = function() {
@@ -35,8 +36,8 @@ angular.module('produtosml').controller('ListProdutosController', ['$scope', '$r
                 prod.$update(function () {
                     ngToast.create('Produto atualizado com sucesso !!!');
                 }, function(errorResponse) {
-                    ngToast.create(errorResponse.data.message);
-                    $scope.error = errorResponse.data.message
+                    ngToast.danger(errorResponse.data.message);
+                    $scope.error = errorResponse.data.message;
                 });
             });
         };
