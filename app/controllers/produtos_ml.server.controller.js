@@ -21,7 +21,13 @@ exports.update = function(req, res) {
 };
 
 exports.create = function(req, res) {
-    var produtoId = req.body.produtoId.replace('-', '');
+
+    var produtoId = req.body.produtoId;
+    if (produtoId.length > 13) {
+        var m = extraiIdProduto(produtoId);
+        produtoId = m[0].replace('-', '');
+    }
+
     var url = baseUrl + produtoId;
     request({
         method: 'GET',
@@ -129,3 +135,17 @@ exports.curlFetch = function(req, res) {
         });
     });
 };
+
+function extraiIdProduto(str) {
+    var re = /MLB-\d{9}/;
+    var m;
+
+    if ((m = re.exec(str)) !== null) {
+        if (m.index === re.lastIndex) {
+            re.lastIndex++;
+        }
+    }
+
+    return m;
+
+}

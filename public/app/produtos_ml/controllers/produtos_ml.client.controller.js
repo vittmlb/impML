@@ -3,6 +3,18 @@
  */
 angular.module('produtosml').controller('ListProdutosController', ['$scope', '$routeParams', '$location', 'ProdutosML', 'ngToast',
     function($scope, $routeParams, $location, ProdutosML, ngToast) {
+
+        $scope.sortkey = 'media.venda';
+        $scope.reverse = true;
+        
+        $scope.reverseSort = function() {
+            $scope.reverse = !$scope.reverse;
+        };
+        
+        $scope.sort = function(keyname) {
+            $scope.sortkey = keyname;
+        };
+        
         $scope.create = function() {
             var produto = new ProdutosML({
                 produtoId: this.produtoId
@@ -42,7 +54,7 @@ angular.module('produtosml').controller('ListProdutosController', ['$scope', '$r
             });
         };
 
-        $scope.numItemsPerPage = 10;
+        $scope.numItemsPerPage = 30;
         
     }
 ]);
