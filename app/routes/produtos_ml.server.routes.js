@@ -12,7 +12,8 @@ module.exports = function(app) {
 
     app.route('/api/produtos_ml/:produtoId')
         .get(ml.read)
-        .put(ml.updateSoldQuantity, ml.list);
+        .put(ml.updateSoldQuantity, ml.list)
+        .delete(ml.delete);
     
 
     app.param('produtoId', ml.findById);

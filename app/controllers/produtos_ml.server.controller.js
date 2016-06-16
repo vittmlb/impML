@@ -48,6 +48,19 @@ exports.create = function(req, res) {
     });
 };
 
+exports.delete = function(req, res) {
+    var produto = req.produto;
+    produto.remove(function (err) {
+        if(err) {
+            return res.status(400).send({
+                message: err
+            });
+        } else {
+            res.json(produto);
+        }
+    });
+};
+
 exports.list = function(req, res) {
     Produtos.find().exec(function (err, produtos) {
         if(err) {

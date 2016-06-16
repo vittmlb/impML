@@ -26,6 +26,24 @@ angular.module('produtosml').controller('ListProdutosController', ['$scope', '$r
                 $scope.error = errorResponse.data.message;
             });
         };
+        $scope.remove = function(produto) {
+            var result = confirm('Você deseja realmente remover este produto?');
+            if(result) {
+                if(produto) {
+                    produto.$remove(function () {
+                        for (var i in $scope.produtos) {
+                            if($scope.produtos[i] === produto) {
+                                $scope.produtos.splice(i, 1);
+                            }
+                        }
+                    });
+                } else {
+                    $scope.produto.$remove(function () {
+                        $location.path('#!/produtos');
+                    });
+                }
+            }
+        };
         $scope.find = function() {
             $scope.produtos = ProdutosML.query();
             $scope.filteredProdutos = $scope.produtos;

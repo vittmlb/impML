@@ -33,46 +33,7 @@
     <br>
     <ul class="list-group">
         <li class="list-group-item" dir-paginate="item in produtos | filter: query | orderBy: sortkey: reverse | itemsPerPage: numItemsPerPage">
-            <div class="container">
-                <a href="#!/produtos/{{item._id}}">
-                    <div class="row">
-                        <div class="col-xs-4 col-sm-2">
-                            <img ng-src="{{item.thumbnail}}" alt="thumbnail of {{item.title}}">
-                        </div>
-                        <div class="col-xs-8 col-sm-7">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <a href="{{item.permalink}}"><h4 data-ng-bind="item.title"></h4></a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <p>Vendas: {{item.historico[item.historico.length-1].venda}}</p>
-                                </div>
-                                <div class="col-xs-3">
-                                    <p>Preço: {{item.price | currency: 'R$ '}}</p>
-                                </div>
-                                <div class="col-xs-3"></div>
-                                <div class="col-xs-3"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <p>Média: {{item.media.venda | number: 2}}</p>
-                                </div>
-                                <div class="col-xs-3"></div>
-                                <div class="col-xs-3"></div>
-                                <div class="col-xs-3"></div>
-                            </div>
-                            <div class="row">
-
-                            </div>
-                        </div>
-                        <div class="hidden-xs col-sm-3">
-                            <button class="btn btn-default" ng-click="atualizarVenda(item)">Update</button>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <container-produtos></container-produtos>
         </li>
     </ul>
     <div class="col-xs-12">
