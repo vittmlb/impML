@@ -19,10 +19,6 @@ footer {
 .panel-produto figure {
     margin: 5px auto;
 }
-.panel-produto figure img {
-    /*margin-left: 22%;*/
-    /*margin-top: 5px;*/
-}
 #panel-tools button {
     margin-top: 28px;
     margin-left: 10px;
@@ -38,7 +34,7 @@ footer {
     font-weight: 400;
 }
 #panel-descricao #lbl_media {
-    margin-left: 30px;
+    margin-left: 10%;
 }
 #panel-descricao #lbl_preco {
     display: block;
@@ -50,13 +46,13 @@ footer {
     font-family: "Source Code Pro", Helvetica, Arial, sans-serif;
 }
 #panel-descricao #lbl_preco span {
-    padding-left: 18px;
+    padding-left: 1%;
 }
 #panel-descricao #lbl_vendas span {
-    padding-left: 5px;
+    padding-left: 0.5%;
 }
 #panel-descricao .info-venda {
-    padding-left: 20px;
+    padding-left: 8%;
 }
 @media screen and (max-width: 1210px) {
     #panel-descricao h4 {
@@ -64,4 +60,31 @@ footer {
         font-size: 1.2em;
         margin-top: 4px;
     }
+}
+@media screen and (max-width: 760px) {
+    #panel-descricao h4 {
+        font-family: "Calibri", Helvetica, Arial, sans-serif;
+        font-size: .9em;
+        margin-top: 4px;
+    }
+    #panel-descricao label {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: .8em;
+        font-weight: 400;
+    }
+    #panel-descricao span {
+        color: #3e5c85;
+        font-size: .9em;
+        font-family: "Source Code Pro", Helvetica, Arial, sans-serif;
+    }
+}
+
+/** Page - List Produtos **/
+
+.list-toolbar div {
+    margin-bottom: 10px;
+}
+
+.d-pagination {
+    padding: 0 auto;
 }
