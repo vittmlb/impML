@@ -1,48 +1,85 @@
-<section data-ng-controller="ListProdutosController" data-ng-init="find()">
-    <h2>Lista de Produtos:</h2>
-    <br>
-    <div class="row list-toolbar">
-        <div class="col-xs-3 col-sm-4">
-            <button class="btn btn-primary pull-left" ng-click="atualizarTodasVendas()">Atualizar Tudo</button>
-        </div>
-        <div class="col-xs-6 col-sm-3">
-            <!-- Single button -->
-            <div class="btn-group pull-right">
-                <button class="btn btn-default" ng-click="reverseSort()">
-                    <i class="fa fa-sort" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Ordenar &nbsp<span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a ng-click="sort('media.venda')">Média</a></li>
-                    <li><a ng-click="sort('historico[historico.length-1].venda')">Vendas</a></li>
-                    <li><a ng-click="sort('price')">Preço</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#"></a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-xs-3 col-sm-2">
-            <input type="text" class="form-control" data-ng-model="numItemsPerPage">
-        </div>
-        <div class="col-xs-12 col-sm-3">
-            <input id="busca-produtos" type="text" class="form-control" placeholder="Busca" data-ng-model="query">
-        </div>
+<br/>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Project list</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li class="active">
+                <strong>Project list</strong>
+            </li>
+        </ol>
     </div>
-    <br>
-    <ul class="list-group">
-        <li class="list-group-item" dir-paginate="item in produtos | filter: query | orderBy: sortkey: reverse | itemsPerPage: numItemsPerPage">
-            <container-produtos></container-produtos>
-        </li>
-    </ul>
+</div>
+<section data-ng-controller="ListProdutosController" data-ng-init="find()">
     <div class="row">
-        <div class="d-pagination">
-            <dir-pagination-controls class="col-xs-12"
-                                     max-size="5"
-                                     direction-links="true"
-                                     boundary-links="true">
-            </dir-pagination-controls>
+        <div class="col-lg-12">
+            <div class="wrapper wrapper-content animated fadeInUp">
+
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>All projects assigned to this account</h5>
+
+                        <div class="ibox-tools">
+                            <a href="" class="btn btn-primary btn-xs">Create new project</a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row m-b-sm m-t-sm">
+                            <div class="col-md-1">
+                                <button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> Refresh</button>
+                            </div>
+                            <div class="col-md-11">
+                                <div class="input-group"><input type="text" placeholder="Search" class="input-sm form-control" data-filter="#filter"> <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-primary"> Go!</button> </span></div>
+                            </div>
+                        </div>
+
+                        <div class="produto-display-list">
+                            <ul style="list-style-type: none;">
+                                <li class="produto-display" data-ng-repeat="item in produtos">
+                                    <div class="row">
+                                        <div class="col-xs-2 col-sm-1">
+                                            <div class="">
+                                                <a href=""><img alt="image" ng-src="{{item.thumbnail}}"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-10 col-sm-6 col-md-6 col-lg-4">
+                                            <div class="produto-list-ml-title">
+                                                <a ui-sref="project_detail">{{ item.title }}</a>
+                                                <br/>
+                                                <small>Vendas: {{item.historico[item.historico.length-1].venda}}</small>&nbsp;&nbsp;
+                                                <small>Média: {{item.media.venda | number: 2}}</small>&nbsp;&nbsp;
+                                                <small>Preço: {{item.price | currency: 'R$ '}}</small>
+                                            </div>
+                                        </div>
+                                        <div class="visible-lg col-lg-3">
+                                            <div class="produto-list-ml-completion">
+                                                <small>Completion with: 48%</small>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 48%;" class="uib-progress-bar"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hidden-xs col-sm-5 col-md-4 col-lg-3">
+                                            <div class="produto-list-ml-action">
+                                                <a href="" class="btn btn-white btn-sm pull-right"><i class="fa fa-eye"></i></a>
+                                                <a href="" class="btn btn-white btn-sm pull-right"><i class="fa fa-pencil"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+<script>
+    $('#tblListaProdutos').footable();
+    $('#myFooTable').footable();
+</script>

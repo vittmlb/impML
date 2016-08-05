@@ -2,8 +2,19 @@
  * Created by Vittorio on 12/05/2016.
  */
 
-var mainAppModuleName = 'impML';
-var mainAppModule = angular.module(mainAppModuleName, ['ngResource', 'ngRoute', 'produtosml', 'angularUtils.directives.dirPagination', 'ngToast']);
+var mainAppModuleName = 'impml';
+var mainAppModule = angular.module('impml', [
+    'ngResource',
+    'ngRoute',
+    'produtosml',
+    'vendedoresml',
+    'angularUtils.directives.dirPagination',
+    'ngToast',
+    'ui.router',
+    'ngAnimate',
+    'ui.bootstrap',
+    'ngFileUpload'
+]);
 
 mainAppModule.config(['$locationProvider', function($locationProvider) {
     $locationProvider.hashPrefix('!');

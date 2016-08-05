@@ -1,9 +1,31 @@
 /**
  * Created by Vittorio on 17/05/2016.
  */
+var merda = [
+    {
+        "time": "Flamengo",
+        "texto": "Melhor time do planeta",
+        "titulos": "6"
+    },
+    {
+        "time": "Vascu",
+        "texto": "Pior time do mundo",
+        "titulos": 2
+    },
+    {
+        "time": "Florminense",
+        "texto": "Time de Donzelas",
+        "titulos": 2
+    },
+    {
+        "time": "Bostafogo",
+        "texto": "Time de merda",
+        "titulos": 0
+    }];
 angular.module('produtosml').controller('ListProdutosController', ['$scope', '$routeParams', '$location', 'ProdutosML', 'ngToast',
     function($scope, $routeParams, $location, ProdutosML, ngToast) {
 
+        $scope.merda = merda;
         $scope.sortkey = 'media.venda';
         $scope.reverse = true;
         

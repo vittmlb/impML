@@ -13,7 +13,6 @@ var morgan = require('morgan');
 var compress = require('compression');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var handlebars = require('express-handlebars').create({layoutsDir: path.join(__dirname, '../app/views/layouts'), defaultLayout: 'main'});
 var request = require('request');
 
 module.exports = function() {
@@ -36,14 +35,6 @@ module.exports = function() {
         resave: true,
         secret: config.sessionSecret
     }));
-
-    app.engine('handlebars', handlebars.engine);
-    app.set('views', path.join(__dirname, '../app/views'));
-    app.set('view engine', 'handlebars');
-
-    app.get('/', function (req, res) {
-        res.render('teste');
-    });
 
     app.get('/fetch', function (req, res) {
         var url = 'http://lista.mercadolivre.com.br/_CustId_93749855';
