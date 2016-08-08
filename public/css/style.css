@@ -54,6 +54,7 @@ footer {
 #panel-descricao .info-venda {
     padding-left: 8%;
 }
+
 @media screen and (max-width: 1210px) {
     #panel-descricao h4 {
         font-family: "Calibri", Helvetica, Arial, sans-serif;
@@ -84,7 +85,7 @@ footer {
 .list-toolbar div {
     margin-bottom: 10px;
 }
-
 .d-pagination {
     padding: 0 auto;
 }
+

@@ -6,8 +6,8 @@
             </div>
             <div class="col-sm-6 col-lg-5">
                 <div class="row">
-                    <div class="col-sm-6">
-                        <slick style="width: 160px; height: 160px;" dots="true" ng-if="produto.pictures.length > 0">
+                    <div class="col-xs-12 col-sm-6">
+                        <slick style="width: 160px; height: 160px; margin: auto;" dots="true" ng-if="produto.pictures.length > 0">
                             <div data-ng-repeat="img in produto.pictures">
                                 <div style="width: 160px; height: 160px;" class="image-imitation">
                                     <img style="width: 160px; height: 160px;" ng-src="{{ img.url }}" alt="">
@@ -17,7 +17,7 @@
                     </div> <!-- Img -->
                     <div class="col-sm-6"> <!-- Preço de Venda -->
                         <div class="row m-t-xs">
-                            <div class="col-xs-12">
+                            <div class="col-xs-12" style="margin: auto;">
                                 <h5 style="margin-top: 16px;" class="m-b-xs">Preço de Venda</h5>
                                 <h1 class="no-margins">{{ produto.price | currency: 'R$ ' }}</h1>
                                 <div class="font-bold text-navy">98% <i class="fa fa-bolt"></i></div>

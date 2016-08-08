@@ -74,7 +74,7 @@
                                         </div>
                                         <div class="col-xs-10 col-sm-6 col-md-6 col-lg-4">
                                             <div class="produto-list-ml-title">
-                                                <a ui-sref="project_detail">{{ item.title }}</a>
+                                                <a href="#!/produtos/{{ item._id }}">{{ item.title }}</a>
                                                 <br/>
                                                 <small>Vendas: {{item.historico[item.historico.length-1].venda}}</small>&nbsp;&nbsp;
                                                 <small>Média: {{item.media.venda | number: 2}}</small>&nbsp;&nbsp;
