@@ -149,6 +149,12 @@ exports.curlFetch = function(req, res) {
     });
 };
 
+exports.alow = function() {
+    Produtos.find().exec(function (err, produtos) {
+        console.log(produtos);
+    });
+};
+
 function extraiIdProduto(str) {
     var re = /MLB-\d{9}/;
     var m;

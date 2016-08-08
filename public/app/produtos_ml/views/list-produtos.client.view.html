@@ -1,13 +1,13 @@
 <br/>
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-sm-4">
-        <h2>Project list</h2>
+        <h2>Acompanhamento de Produtos</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="index.html">Home</a>
+                <a href="#">Home</a>
             </li>
             <li class="active">
-                <strong>Project list</strong>
+                <strong>Acompanhamento de Produtos</strong>
             </li>
         </ol>
     </div>
@@ -19,30 +19,53 @@
 
                 <div class="ibox">
                     <div class="ibox-title">
-                        <h5>All projects assigned to this account</h5>
+                        <h5>Lista com os produtos acompanhados</h5>
 
                         <div class="ibox-tools">
-                            <a href="" class="btn btn-primary btn-xs">Create new project</a>
+                            <a ui-sref="produtos_create" class="btn btn-primary btn-xs">Acompanhar Novo Produto</a>
                         </div>
                     </div>
                     <div class="ibox-content">
                         <div class="row m-b-sm m-t-sm">
                             <div class="col-md-1">
-                                <button type="button" ng-click="update()" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> Update</button>
+                                <button type="button" ng-click="atualizarTodasVendas()" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> Update</button>
                             </div>
-                            <div class="col-md-11">
-                                <div class="input-group">
-                                    <input type="text" placeholder="Search" class="input-sm form-control" data-ng-model="query">
-                                    <span class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-primary"> Go!</button>
-                                    </span>
+                            <div class="col-xs-6 col-sm-3">
+                                <!-- Single button -->
+                                <div class="btn-group pull-right">
+                                    <button class="btn btn-white btn-sm" ng-click="reverseSort()">
+                                        <i class="fa fa-sort" aria-hidden="true"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-white btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Ordenar &nbsp<span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a ng-click="sort('media.venda')">Média</a></li>
+                                        <li><a ng-click="sort('historico[historico.length-1].venda')">Vendas</a></li>
+                                        <li><a ng-click="sort('price')">Preço</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#"></a></li>
+                                    </ul>
                                 </div>
                             </div>
+                            <div class="col-xs-3 col-sm-2">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-filter"></i></span>
+                                    <input type="text" class="input-sm form-control" data-ng-model="numItemsPerPage" placeholder="num por pag">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                    <input id="busca-produtos" type="text" class="input-sm form-control" placeholder="Busca" data-ng-model="query">
+                                </div>
+                            </div>
+
                         </div>
 
                         <div class="produto-display-list">
                             <ul style="list-style-type: none;">
-                                <li class="produto-display" data-ng-repeat="item in produtos | filter: query">
+                                <li class="produto-display" dir-paginate="item in produtos | filter: query | orderBy: sortkey: reverse | itemsPerPage: numItemsPerPage">
                                     <div class="row">
                                         <div class="col-xs-2 col-sm-1">
                                             <div class="">
@@ -68,14 +91,23 @@
                                         </div>
                                         <div class="hidden-xs col-sm-5 col-md-4 col-lg-3">
                                             <div class="produto-list-ml-action">
-                                                <a href="" class="btn btn-white btn-sm pull-right"><i class="fa fa-eye"></i></a>
-                                                <a href="" class="btn btn-white btn-sm pull-right"><i class="fa fa-pencil"></i></a>
+                                                <a ng-click="delete()" class="btn btn-white btn-sm pull-right"><i class="fa fa-times"></i></a>
+                                                <a href="#!/produtos/{{ item._id }}" class="btn btn-white btn-sm pull-right"><i class="fa fa-eye"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                             </ul>
 
+                        </div>
+                        <div class="row">
+                            <div class="d-pagination">
+                                <dir-pagination-controls class="col-xs-12"
+                                                         max-size="5"
+                                                         direction-links="true"
+                                                         boundary-links="true">
+                                </dir-pagination-controls>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -84,6 +116,6 @@
     </div>
 </section>
 <script>
-    $('#tblListaProdutos').footable();
-    $('#myFooTable').footable();
+//    $('#tblListaProdutos').footable(); // todo: apagar depois de confirmar que não está sendo usado.
+//    $('#myFooTable').footable();
 </script>

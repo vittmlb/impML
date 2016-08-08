@@ -13,7 +13,9 @@ var mainAppModule = angular.module('impml', [
     'ui.router',
     'ngAnimate',
     'ui.bootstrap',
-    'ngFileUpload'
+    'ngFileUpload',
+    'angular-flot',
+    'slick'
 ]);
 
 mainAppModule.config(['$locationProvider', function($locationProvider) {

@@ -14,6 +14,8 @@ var compress = require('compression');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var request = require('request');
+var schedule = require('node-schedule');
+
 
 module.exports = function() {
 
@@ -50,6 +52,17 @@ module.exports = function() {
 
     require('../app/routes/produtos_ml.server.routes.js')(app);
     require('../app/routes/vendedores_ml.server.routes')(app);
+
+    var alow = require('../app/controllers/produtos_ml.server.controller');
+
+    var rule = new schedule.RecurrenceRule();
+    rule.second = 1;
+
+    var j = schedule.scheduleJob(rule, function(){
+        // alow.alow();
+        var time = Date.now();
+        console.log('Alow: ' + time);
+    });
     
     return app;
 
