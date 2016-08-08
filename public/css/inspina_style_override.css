@@ -60,7 +60,7 @@ dd.produto-list-ml-people {
     height: 45px;
 }
 .produto-list-ml-title {
-    margin-top: 12px;
+    margin-top: 14px;
 }
 .produto-list-ml-title a {
     font-size: 14px;
@@ -98,4 +98,16 @@ dd.produto-list-ml-people {
 .produto-list-ml-list tr:hover {
     cursor: pointer;
     transform: scale(1.1);
+}
+
+@media screen and (max-width: 1142px) {
+    .produto-list-ml-title {
+        padding-left: 35px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .produto-list-ml-title a {
+        font-size: .9em;
+    }
 }

@@ -58,11 +58,11 @@ module.exports = function() {
     var rule = new schedule.RecurrenceRule();
     rule.second = 1;
 
-    var j = schedule.scheduleJob(rule, function(){
-        // alow.alow();
-        var time = Date.now();
-        console.log('Alow: ' + time);
-    });
+    // var j = schedule.scheduleJob(rule, function(){ todo: Ajustar para fazer updates diariamente
+    //     // alow.alow();
+    //     var time = Date.now();
+    //     console.log('Alow: ' + time);
+    // });
     
     return app;
 
