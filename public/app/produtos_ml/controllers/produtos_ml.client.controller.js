@@ -88,7 +88,7 @@ angular.module('produtosml').controller('ListProdutosController', ['$scope', '$s
                 $scope.error = errorResponse.data.message;
             });
         };
-        $scope.remove = function(produto) {
+        $scope.delete = function(produto) {
             var result = confirm('Você deseja realmente remover este produto?');
             if(result) {
                 if(produto) {
@@ -101,7 +101,7 @@ angular.module('produtosml').controller('ListProdutosController', ['$scope', '$s
                     });
                 } else {
                     $scope.produto.$remove(function () {
-                        $location.path('#!/produtos');
+                        $location.path('/produtos');
                     });
                 }
             }

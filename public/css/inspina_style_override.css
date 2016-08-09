@@ -38,6 +38,13 @@ Meu CSS com alterações que façam um "override" ao css inspinia.
     padding-bottom: 10px;
     border-bottom: 1px solid #d9d9df;
 }
+.produto-display-list-title a {
+    text-decoration: none;
+    color: dimgray;
+}
+.produto-display-list-title a:link, a:visited, a:active, a:hover {
+    color: dimgray;
+}
 
 /* MODAL PRODUTOS */
 .produto-list-ml-status {
