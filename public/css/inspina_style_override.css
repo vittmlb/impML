@@ -33,12 +33,17 @@ Meu CSS com alterações que façam um "override" ao css inspinia.
     padding: 5px;
 }
 
+.produto-display-list-title {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d9d9df;
+}
+
 /* MODAL PRODUTOS */
 .produto-list-ml-status {
     margin-top: 30px;
     margin-left: 5px;
 }
-
 .produto-list-ml-people,
 .produto-list-ml-action {
     margin-top: 20px;
@@ -100,28 +105,73 @@ dd.produto-list-ml-people {
     transform: scale(1.1);
 }
 
+.div-margin-bottom {
+    margin-bottom: 30px;
+}
+
 slick {
     width: 80%;
     margin: auto;
 }
-.slick-div {
-    margin-bottom: 50px;
+
+.toolbar-input-button {
+    margin-bottom: 12px;
 }
 
 @media screen and (max-width: 1142px) {
     .produto-list-ml-title {
         padding-left: 35px;
     }
+    #btn-update-all {
+        width: 100%;
+    }
+    #btn-dropdown-ordenar {
+        width: 12%;
+    }
+    #btn-ordenar {
+        width: 88%;
+    }
+    #span-btn-ordenar {
+        margin-left: 80px;
+    }
 }
 
 @media screen and (max-width: 600px) {
     .produto-list-ml-title a {
-        font-size: .9em;
+        font-size: .85em;
     }
     slick {
         width: 100%;
     }
     .slick-div {
         margin-bottom: 15px;
+    }
+    #sales-current-year {
+        text-align: right;
+    }
+    #sales-current-year-table td:nth-child(even) {
+        text-align: right;
+    }
+    .produto-display-list-title h1 {
+        font-size: 2em;
+    }
+    .produto-list-ml-title {
+        margin-top: 8px;
+    }
+    .produto-list-ml-title small:last-child {
+        display: block;
+        margin-top: 1px;
+    }
+    #btn-update-all {
+        width: 100%;
+    }
+    #btn-dropdown-ordenar {
+        width: 12%;
+    }
+    #btn-ordenar {
+        width: 88%;
+    }
+    #span-btn-ordenar {
+        margin-left: 80px;
     }
 }
