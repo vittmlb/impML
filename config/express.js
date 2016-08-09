@@ -55,12 +55,12 @@ module.exports = function() {
 
     var ProdutosController = require('../app/controllers/produtos_ml.server.controller');
 
-    var rule = new schedule.RecurrenceRule();
-    rule.hour = 24;
-
-    var j = schedule.scheduleJob(rule, function(){
-        ProdutosController.scheduledJobAtualizaProdutos();
-    });
+    // var rule = new schedule.RecurrenceRule();
+    // rule.hour = 24;
+    //
+    // var j = schedule.scheduleJob(rule, function(){
+    //     ProdutosController.scheduledJobAtualizaProdutos();
+    // });
     
     
     return app;
