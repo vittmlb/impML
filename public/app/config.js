@@ -3,8 +3,6 @@
  */
 angular.module('impml').config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/', {
-            templateUrl: 'index.html'
-        });
+        $urlRouterProvider.otherwise('/produtos');
     }
 ]);
