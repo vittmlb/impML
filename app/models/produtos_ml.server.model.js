@@ -112,7 +112,8 @@ var ProdutoMLSchema = new Schema({
     historico: [
         {
             data: Date,
-            venda: Number
+            venda: Number,
+            venda_da_data: Number
         }
     ]
 });
@@ -125,6 +126,18 @@ ProdutoMLSchema.set('toJSON', {
 ProdutoMLSchema.virtual('media.venda').get(function () {
     var vendaTotal = this.historico[this.historico.length - 1].venda - this.historico[0].venda;
     return vendaTotal / dayDiff(this.historico[0].data, this.historico[this.historico.length - 1].data);
+});
+
+ProdutoMLSchema.virtual('vendas_mensais').get(function () {
+    var mes_anterior = 0;
+    var venda_mes = 0;
+    var result_array = [];
+    for(var i = 0; i < this.historico.length -1; i++) {
+        var mes = new Date(this.historico[i].data).getMonth();
+        if (mes !== mes_anterior) {
+
+        }
+    }
 });
 
 function dayDiff(firstDate, secondDate) {

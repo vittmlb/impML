@@ -111,10 +111,6 @@ angular.module('produtosml').controller('ListProdutosController', ['$scope', '$s
             $scope.filteredProdutos = $scope.produtos;
         };
         $scope.findOne = function() {
-            // $scope.produto = ProdutosML.get({
-            //     produtoId: $stateParams.produtoId
-            // });
-            // $scope.loadData();
             ProdutosML.get({
                 produtoId: $stateParams.produtoId
             }).$promise.then(function(data) {
@@ -141,7 +137,6 @@ angular.module('produtosml').controller('ListProdutosController', ['$scope', '$s
                 });
             });
         };
-
         $scope.numItemsPerPage = 30;
     }
 ]);

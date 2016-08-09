@@ -53,16 +53,15 @@ module.exports = function() {
     require('../app/routes/produtos_ml.server.routes.js')(app);
     require('../app/routes/vendedores_ml.server.routes')(app);
 
-    var alow = require('../app/controllers/produtos_ml.server.controller');
+    var ProdutosController = require('../app/controllers/produtos_ml.server.controller');
 
     var rule = new schedule.RecurrenceRule();
-    rule.second = 1;
+    rule.hour = 24;
 
-    // var j = schedule.scheduleJob(rule, function(){ todo: Implantar o sistema para atualizar os dados diariamente.
-    //     // alow.alow();
-    //     var time = Date.now();
-    //     console.log('Alow: ' + time);
-    // });
+    var j = schedule.scheduleJob(rule, function(){
+        ProdutosController.scheduledJobAtualizaProdutos();
+    });
+    
     
     return app;
 
