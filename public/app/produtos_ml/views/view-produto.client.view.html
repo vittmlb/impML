@@ -1,12 +1,14 @@
 <div class="wrapper wrapper-content animated fadeIn" ng-controller="ListProdutosController as chart" data-ng-init="findOne()">
     <div class="p-w-md m-t-sm">
         <div class="row">
-            <div class="col-sm-12" style="margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid gray;">
-                <h1>{{ produto.title }}</h1>
+            <div class="col-sm-12">
+                <div class="produto-display-list-title">
+                    <h1>{{ produto.title }}</h1>
+                </div>
             </div>
             <div class="col-sm-6 col-lg-5">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 slick-div">
+                    <div class="col-xs-12 col-sm-6 div-margin-bottom" style="margin-top: 10px;">
                         <slick dots="true" ng-if="produto.pictures.length > 0">
                             <div data-ng-repeat="img in produto.pictures | limitTo: 5">
                                 <div style="width: 160px; height: 160px; margin: auto;" class="image-imitation">
@@ -15,7 +17,7 @@
                             </div>
                         </slick>
                     </div> <!-- Img -->
-                    <div class="col-sm-6"> <!-- Preço de Venda -->
+                    <div class="col-sm-6 div-margin-bottom"> <!-- Preço de Venda -->
                         <div class="row m-t-xs">
                             <div class="col-xs-12" style="margin: auto;">
                                 <h5 style="margin-top: 16px;" class="m-b-xs">Preço de Venda</h5>
@@ -38,7 +40,7 @@
                     </div>
                 </div>
             </div> <!-- Coluna 1 - Img e dados -->
-            <div class="visible-lg col-lg-3">
+            <div class="visible-lg col-lg-3 div-margin-bottom">
                 <h1 class="m-b-xs">
                     26,900
                 </h1>
@@ -65,7 +67,7 @@
                 </div>
 
             </div> <!-- Coluna 2 - Dados -->
-            <div class="col-sm-6 col-lg-4">
+            <div class="col-sm-6 col-lg-4 div-margin-bottom">
 
                 <div class="row m-t-xs">
                     <div class="col-xs-6">
@@ -73,15 +75,15 @@
                         <h1 class="no-margins">160,000</h1>
                         <div class="font-bold text-navy">98% <i class="fa fa-bolt"></i></div>
                     </div>
-                    <div class="col-xs-6">
-                        <h5 class="m-b-xs">Sals current year</h5>
+                    <div class="col-xs-6" id="sales-current-year">
+                        <h5 class="m-b-xs">Sales current year</h5>
                         <h1 class="no-margins">42,120</h1>
                         <div class="font-bold text-navy">98% <i class="fa fa-bolt"></i></div>
                     </div>
                 </div>
 
 
-                <table class="table small m-t-sm">
+                <table class="table small m-t-sm" id="sales-current-year-table">
                     <tbody>
                     <tr>
                         <td>
