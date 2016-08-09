@@ -203,3 +203,7 @@ function extraiIdProduto(str) {
     return m;
 
 }
+
+exports.teste = function() {
+    console.log('Testando!!!');
+};

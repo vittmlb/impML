@@ -14,8 +14,7 @@ var compress = require('compression');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var request = require('request');
-var schedule = require('node-schedule');
-
+var Schedule = require('node-schedule');
 
 module.exports = function() {
 
@@ -55,14 +54,16 @@ module.exports = function() {
 
     var ProdutosController = require('../app/controllers/produtos_ml.server.controller');
 
-    // var rule = new schedule.RecurrenceRule();
-    // rule.hour = 24;
-    //
-    // var j = schedule.scheduleJob(rule, function(){
-    //     ProdutosController.scheduledJobAtualizaProdutos();
-    // });
-    
-    
+    var rule = new Schedule.RecurrenceRule();
+    rule.second = 0;
+    rule.hour = 11;
+    rule.minute = 0;
+    rule.dayOfWeek = [0, 6];
+
+    var j = Schedule.scheduleJob(rule, function(){
+        ProdutosController.scheduledJobAtualizaProdutos();
+    });
+
     return app;
 
 };
