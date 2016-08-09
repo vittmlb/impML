@@ -100,6 +100,14 @@ dd.produto-list-ml-people {
     transform: scale(1.1);
 }
 
+slick {
+    width: 80%;
+    margin: auto;
+}
+.slick-div {
+    margin-bottom: 50px;
+}
+
 @media screen and (max-width: 1142px) {
     .produto-list-ml-title {
         padding-left: 35px;
@@ -109,5 +117,11 @@ dd.produto-list-ml-people {
 @media screen and (max-width: 600px) {
     .produto-list-ml-title a {
         font-size: .9em;
+    }
+    slick {
+        width: 100%;
+    }
+    .slick-div {
+        margin-bottom: 15px;
     }
 }

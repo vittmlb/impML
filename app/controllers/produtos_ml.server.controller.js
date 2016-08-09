@@ -99,7 +99,12 @@ exports.updateSoldQuantity = function(req, res, next) {
                 message: err
             });
         } else {
-            produto.historico.push({data: Date.now(), venda: body.sold_quantity});
+            if(produto.historico.length > 0) {
+                body.venda_da_data = 0;
+            } else {
+                body.venda_da_data = body.sold_quantity - produto.historico[produto.historico.length - 1].venda;
+            }
+            produto.historico.push({data: Date.now(), venda: body.sold_quantity, venda_da_data: body.venda_da_data });
             produto.save(function (err) {
                 if(err) {
                     return res.status(400).send({
@@ -149,11 +154,41 @@ exports.curlFetch = function(req, res) {
     });
 };
 
-exports.alow = function() {
+exports.scheduledJobAtualizaProdutos = function() {
     Produtos.find().exec(function (err, produtos) {
-        console.log(produtos);
+        produtos.forEach(function (produto) {
+            updateSoldQuantityForJobs(produto);
+        });
     });
 };
+
+function updateSoldQuantityForJobs(produtoParaUpdate) {
+    var url = baseUrl + produtoParaUpdate.id;
+    var produto = produtoParaUpdate;
+    request({
+        method: 'GET',
+        url: url,
+        json: true
+    }, function (err, response, body) {
+        if(err) {
+            console.log(err);
+        } else {
+            if(produto.historico.length > 0) {
+                body.venda_da_data = 0;
+            } else {
+                body.venda_da_data = body.sold_quantity - produto.historico[produto.historico.length - 1].venda;
+            }
+            produto.historico.push({data: Date.now(), venda: body.sold_quantity, venda_da_data: body.venda_da_data });
+            produto.save(function (err) {
+                if(err) {
+                    console.log(err);
+                } else {
+                    console.log(`Produto id: ${produto._id} atualizado corretamente.`);
+                }
+            });
+        }
+    });
+}
 
 function extraiIdProduto(str) {
     var re = /MLB-\d{9}/;
