@@ -28,6 +28,7 @@ module.exports = function() {
 
     require('../app/models/produtos_ml.server.model');
     require('../app/models/vendedores_ml.server.model');
+    require('../app/models/vistas.server.model');
     
     return db;
     

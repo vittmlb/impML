@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/ngToast/dist/ngToast.css"> <!-- CSS do notificador Toastr -->
 
-    <link rel="stylesheet" href="bower_components/FooTable/compiled/footable.bootstrap.css"> <!-- CSS do plugin FooTable -->
+    <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css"> <!-- SweetAlert -->
+    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css">
     <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.css">
     <link rel="stylesheet" href="css/inspina_style.css">
     <link rel="stylesheet" href="css/inspina_style_override.css">
@@ -34,25 +34,15 @@
 <script src="bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 <script src="bower_components/ngToast/dist/ngToast.min.js"></script>
+<script src="bower_components/AngularJS-Toaster/toaster.js"></script>
 
 
-
-<!--Teste Sparkline-->
-<script src="bower_components/testes/flot/jquery.flot.js"></script>
-<script src="bower_components/testes/flot/jquery.flot.time.js"></script>
-<script src="bower_components/testes/flot/jquery.flot.tooltip.min.js"></script>
-<script src="bower_components/testes/flot/jquery.flot.spline.js"></script>
-<script src="bower_components/testes/flot/jquery.flot.resize.js"></script>
-<script src="bower_components/testes/flot/jquery.flot.pie.js"></script>
-<script src="bower_components/testes/flot/curvedLines.js"></script>
-<script src="bower_components/testes/flot/angular-flot.js"></script>
-<script src="bower_components/testes/sparkline/jquery.sparkline.min.js"></script>
-
-<!--Plugins-->
+<!-- Plugins-->
 <script src="https://use.fontawesome.com/f474efa969.js"></script>
 
-<!--Footable / Plugin clonado com git -->
-<script src="bower_components/FooTable/compiled/footable.js"></script>
+<script src="bower_components/ngSweetAlert/SweetAlert.min.js"></script>
+<script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+
 
 <!--Slick-->
 <script src="bower_components/slick-carousel/slick/slick.js"></script>
@@ -65,6 +55,12 @@
 <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
 
 <script src="bower_components/metisMenu/dist/metisMenu.js"></script>
+
+<script src="./app/application.js"></script>
+<script src="./app/directives.js"></script>
+<script src="./app/config.js"></script>
+<script src="./app/inspinia.js"></script>
+<script src="./app/controllers.js"></script>
 
 <!--Scripts - Vendedores-->
 <script src="./app/vendedores_ml/vendedores_ml.client.module.js"></script>
@@ -79,11 +75,22 @@
 <script src="./app/produtos_ml/services/produtos_ml.client.service.js"></script>
 <script src="./app/produtos_ml/directives/produtos.client.directives.js"></script>
 
+<!--Scripts Vistas-->
+<script src="./app/vistas/vistas.client.module.js"></script>
+<script src="./app/vistas/config/vistas.client.routes.js"></script>
+<script src="./app/vistas/controllers/vistas.client.controller.js"></script>
+<script src="./app/vistas/services/vistas.client.service.js"></script>
 
-<script src="./app/application.js"></script>
-<script src="./app/directives.js"></script>
-<script src="./app/config.js"></script>
-<script src="./app/inspinia.js"></script>
-<script src="./app/controllers.js"></script>
+<!--Teste Sparkline-->
+<script src="bower_components/testes/flot/jquery.flot.js"></script>
+<script src="bower_components/testes/flot/jquery.flot.time.js"></script>
+<script src="bower_components/testes/flot/jquery.flot.tooltip.min.js"></script>
+<script src="bower_components/testes/flot/jquery.flot.spline.js"></script>
+<script src="bower_components/testes/flot/jquery.flot.resize.js"></script>
+<script src="bower_components/testes/flot/jquery.flot.pie.js"></script>
+<script src="bower_components/testes/flot/curvedLines.js"></script>
+<script src="bower_components/testes/flot/angular-flot.js"></script>
+<script src="bower_components/testes/sparkline/jquery.sparkline.min.js"></script>
+
 </body>
 </html>

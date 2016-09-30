@@ -51,6 +51,7 @@ module.exports = function() {
 
     require('../app/routes/produtos_ml.server.routes.js')(app);
     require('../app/routes/vendedores_ml.server.routes')(app);
+    require('../app/routes/vistas.server.routes')(app);
 
     var ProdutosController = require('../app/controllers/produtos_ml.server.controller');
 

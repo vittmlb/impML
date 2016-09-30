@@ -6,6 +6,12 @@ angular.module('produtosml').controller('ListProdutosController', ['$scope', '$s
 
         $scope.sortkey = 'media.venda';
         $scope.reverse = true;
+        $scope.reverseSort = function() {
+            $scope.reverse = !$scope.reverse;
+        };
+        $scope.sort = function(keyname) {
+            $scope.sortkey = keyname;
+        };
 
         var data1 = [
             [0,4],[1,8],[2,5],[3,10],[4,4],[5,16],[6,5],[7,11],[8,6],[9,11],[10,20],[11,10],[12,13],[13,4],[14,7],[15,8],[16,12]
@@ -67,14 +73,6 @@ angular.module('produtosml').controller('ListProdutosController', ['$scope', '$s
                 data.push([porra.getTime(), venda]);
             }
             return data;
-        };
-
-        $scope.reverseSort = function() {
-            $scope.reverse = !$scope.reverse;
-        };
-        
-        $scope.sort = function(keyname) {
-            $scope.sortkey = keyname;
         };
         
         $scope.create = function() {
@@ -141,11 +139,11 @@ angular.module('produtosml').controller('ListProdutosController', ['$scope', '$s
     }
 ]);
 
-angular.module('impsys').controller("sparklineCtrl", ["$scope", function ($scope) {
+angular.module('impml').controller("sparklineCtrl", ["$scope", function ($scope) {
     return $scope.demoData1 = {data: [3, 1, 2, 2, 4, 6, 4, 5, 2, 4, 5, 3, 4, 6, 4, 7], options: {type: "line", lineColor: "#fff", highlightLineColor: "#fff", fillColor: "#60CD9B", spotColor: !1, minSpotColor: !1, maxSpotColor: !1, width: "100%", height: "150px"}}, $scope.simpleChart1 = {data: [3, 1, 2, 3, 5, 3, 4, 2], options: {type: "line", lineColor: "#31C0BE", fillColor: "#bce0df", spotColor: !1, minSpotColor: !1, maxSpotColor: !1}}, $scope.simpleChart2 = {data: [3, 1, 2, 3, 5, 3, 4, 2], options: {type: "bar", barColor: "#31C0BE"}}, $scope.simpleChart3 = {data: [3, 1, 2, 3, 5, 3, 4, 2], options: {type: "pie", sliceColors: ["#31C0BE", "#60CD9B", "#E87352", "#8170CA", "#EEC95A", "#60CD9B"]}}, $scope.tristateChart1 = {data: [1, 2, -3, -5, 3, 1, -4, 2], options: {type: "tristate", posBarColor: "#95b75d", negBarColor: "#fa8564"}}, $scope.largeChart1 = {data: [3, 1, 2, 3, 5, 3, 4, 2], options: {type: "line", lineColor: "#674E9E", highlightLineColor: "#7ACBEE", fillColor: "#927ED1", spotColor: !1, minSpotColor: !1, maxSpotColor: !1, width: "100%", height: "150px"}}, $scope.largeChart2 = {data: [3, 1, 2, 3, 5, 3, 4, 2], options: {type: "bar", barColor: "#31C0BE", barWidth: 10, width: "100%", height: "150px"}}, $scope.largeChart3 = {data: [3, 1, 2, 3, 5], options: {type: "pie", sliceColors: ["#31C0BE", "#60CD9B", "#E87352", "#8170CA", "#EEC95A", "#60CD9B"], width: "150px", height: "150px"}}
 }]);
 
-angular.module('impsys').directive("sparkline", [function () {
+angular.module('impml').directive("sparkline", [function () {
     return {
         restrict: "A", scope: {data: "=", options: "="}, link: function (scope, ele) {
             var data, options, sparkResize, sparklineDraw;

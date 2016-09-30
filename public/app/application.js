@@ -8,6 +8,7 @@ var mainAppModule = angular.module('impml', [
     'ngRoute',
     'produtosml',
     'vendedoresml',
+    'vistas',
     'angularUtils.directives.dirPagination',
     'ngToast',
     'ui.router',
@@ -15,7 +16,9 @@ var mainAppModule = angular.module('impml', [
     'ui.bootstrap',
     'ngFileUpload',
     'angular-flot',
-    'slick'
+    'slick',
+    'oitozero.ngSweetAlert',
+    'toaster'
 ]);
 
 mainAppModule.config(['$locationProvider', function($locationProvider) {
