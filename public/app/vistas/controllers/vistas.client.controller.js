@@ -115,7 +115,6 @@ angular.module('vistas').controller('VistasController', ['$scope', '$stateParams
                 });
         };
 
-
         $scope.addProdutoVista = function(produto) {
             $scope.listaProdutosVista.push(produto);
             var index = $scope.listaProdutosGeral.indexOf(produto);
@@ -135,6 +134,13 @@ angular.module('vistas').controller('VistasController', ['$scope', '$stateParams
             var index = $scope.listaProdutosVista.indexOf(produto);
             if(index > -1) {
                 $scope.listaProdutosVista.splice(index, 1);
+            }
+        };
+        $scope.removeProdutoVistaUpdate = function(produto) {
+            $scope.listaProdutosGeral.push(produto);
+            var index = $scope.vista.produtos_vista.indexOf(produto);
+            if(index > -1) {
+                $scope.vista.produtos_vista.splice(index, 1);
             }
         };
 

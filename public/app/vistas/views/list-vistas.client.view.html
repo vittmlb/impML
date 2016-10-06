@@ -120,8 +120,9 @@
                                                 <div class="produto-list-ml-title" style="margin-top: 20px;">
                                                     <a href="#!/produtos/{{ item._id }}">{{ item.title }}</a>
                                                     <br/>
-                                                    <small>Vendas: {{item.historico[item.historico.length-1].venda}}</small>&nbsp;&nbsp;
-                                                    <small>Média: {{item.media.venda | number: 2}}</small>&nbsp;&nbsp;
+                                                    <!--<small>Vendas: {{item.historico[item.historico.length-1].venda}}</small>&nbsp;&nbsp;-->
+                                                    <!--<small>Média: {{item.media.venda | number: 2}}</small>-->
+                                                    <small>Criado em: {{ item.start_time | date: 'dd/MM/yyyy' }}</small>
                                                     <small>Preço: {{item.price | currency: 'R$ '}}</small>
                                                 </div>
                                             </div>
