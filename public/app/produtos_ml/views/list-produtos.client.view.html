@@ -81,14 +81,26 @@
                                                 <small>Preço: {{item.price | currency: 'R$ '}}</small>
                                             </div>
                                         </div>
-                                        <div class="visible-lg col-lg-3">
-                                            <div class="produto-list-ml-completion">
-                                                <small>Completion with: 48%</small>
-                                                <div class="progress progress-mini">
-                                                    <div style="width: 48%;" class="uib-progress-bar"></div>
-                                                </div>
+                                        <div class="visible-lg col-lg-1 text-right">
+                                            <div style="margin-top: 10px;">
+                                                <span>Vendas</span>
+                                                <h2 class="font-bold">{{item.historico[item.historico.length-1].venda}}</h2>
                                             </div>
                                         </div>
+                                        <div class="visible-lg col-lg-2 text-right">
+                                            <div style="margin-top: 10px;">
+                                                <span>Média</span>
+                                                <h2 class="font-bold">{{item.media.venda | number: 2}}</h2>
+                                            </div>
+                                        </div>
+                                        <!--<div class="visible-lg col-lg-3">-->
+                                            <!--<div class="produto-list-ml-completion">-->
+                                                <!--<small>Completion with: 48%</small>-->
+                                                <!--<div class="progress progress-mini">-->
+                                                    <!--<div style="width: 48%;" class="uib-progress-bar"></div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
                                         <div class="hidden-xs col-sm-5 col-md-4 col-lg-3">
                                             <div class="produto-list-ml-action">
                                                 <a ng-click="delete(item)" class="btn btn-white btn-sm pull-right"><i class="fa fa-times"></i></a>

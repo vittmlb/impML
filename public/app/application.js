@@ -18,7 +18,7 @@ var mainAppModule = angular.module('impml', [
     'angular-flot',
     'slick',
     'oitozero.ngSweetAlert',
-    'toaster'
+    // 'toaster'
 ]);
 
 mainAppModule.config(['$locationProvider', function($locationProvider) {
